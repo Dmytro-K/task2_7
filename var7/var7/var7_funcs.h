@@ -3,21 +3,22 @@
 
 #ifndef __cplusplus
 typedef unsigned char bool;
-#define true (bool)1
-#define false (bool)0
+#define true ((bool)1)
+#define false ((bool)0)
 #endif /* __cplusplus */
 
 #ifndef NULL
 #define NULL (void*)0
 #endif /* NULL */
 
-#define FIELDS_SIZE 256
-#define BUF_SIZE (FIELDS_SIZE*4)
+#define FIELD_SIZE 256
+#define BUF_SIZE (FIELD_SIZE*4)
 
-typedef struct _BookInfo{
-	char author[FIELDS_SIZE];
-	char name[FIELDS_SIZE];
-	char publisher[FIELDS_SIZE];
+typedef struct _BookInfo
+{
+	char author[FIELD_SIZE];
+	char name[FIELD_SIZE];
+	char publisher[FIELD_SIZE];
 	int year;
 } BookInfo;
 
@@ -28,7 +29,6 @@ struct _BookList
 	BookList *next;
 	BookInfo book;
 };
-
 
 bool InputBooks( BookList *books );
 
